@@ -24,7 +24,7 @@ const createTodo = async (req, res) => {
       collaborators: [req.user.id],
       roomId,
     });
-    console.log(todo);
+    // console.log(todo);
     await todo.save();
 
     res.status(201).json(todo);

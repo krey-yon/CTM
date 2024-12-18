@@ -15,7 +15,7 @@ const createRoom = async (req, res) => {
 
     // Create a default todo for the room
     const defaultTodo = new Todo({
-      title: `Default todo for room: ${name}`,
+      title: `Default todo for room`,
       owner: userId,
       collaborators: [userId],
       roomId,
