@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/todos/${roomId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/todos/${roomId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   const deleteTodo = async (todoId: string) => {
     try {
-      const response = await fetch(`http://localhost:3000/todos/${todoId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/todos/${todoId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const Dashboard = () => {
 
   const createRoom = async () => {
     try {
-      const response = await fetch('http://localhost:3000/room/create', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/room/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const Dashboard = () => {
 
   const handleToggleIsDone = async (id: string, isDone: boolean) => {
     try {
-      const response = await fetch(`http://localhost:3000/todos/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/todos/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const Dashboard = () => {
 
   return (
     <div className="p-4 bg-gray-950 min-h-screen">
-      <h1 className="text-2xl font-bold">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-white">CTM</h1>
       <div className='flex  gap-8 justify-center'>
       <div className="my-4">
         <input

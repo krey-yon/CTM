@@ -38,7 +38,7 @@ export default function AuthPage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/signin', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signin`, { email, password });
       localStorage.setItem("token", response.data.token);
       setToken(response.data.token);
       toast.success("Login successful");
@@ -54,7 +54,7 @@ export default function AuthPage() {
     setSuccess('');
 
     try {
-      const response = await fetch('http://localhost:3000/auth/signup', {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

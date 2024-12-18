@@ -6,6 +6,7 @@ import { FiGithub } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { logout } from "../api";
 import { toast } from "react-toastify";
+import { MdMeetingRoom } from "react-icons/md";
 const icons = [
   {
     id: 1,
@@ -27,9 +28,9 @@ const icons = [
   },
   {
     id: 4,
-    icon: <FaRegUser size={24} />,
-    title: "Copy User ID",
-    onClick: () => toast("Copy User ID"),
+    icon: <MdMeetingRoom size={24} />,
+    title: "Copy Room ID",
+    onClick: () => toast("error"),
   },
   {
     id: 5,
@@ -52,6 +53,8 @@ const handleLogout = async () => {
     console.error("Logout failed", err);
   }
 };
+
+
 
 function FloatingDeck() {
   return (

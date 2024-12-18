@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/signin', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signin`, { email, password });
       setToken(response.data.token);
       navigate('/dashboard');
     } catch (error) {

@@ -14,7 +14,7 @@ const CreateTodo = ({ roomId, onTodoCreated }: CreateTodoProps) => {
   const handleCreate = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/todos/create',
+        `${import.meta.env.VITE_BACKEND_URL}/todos/create`,
         { title, roomId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
