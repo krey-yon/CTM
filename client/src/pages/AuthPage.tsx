@@ -40,7 +40,7 @@ export default function AuthPage() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signin`, { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/3000/auth/signin`, { email, password });
       localStorage.setItem("token", response.data.token);
       setToken(response.data.token);
       toast.success("Login successful");
