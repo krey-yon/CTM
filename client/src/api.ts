@@ -23,8 +23,9 @@ export const createRoom = async (data: { name: string }) => {
 };
 
 export const logout = async () => {
-  // await axios.get(`${process.env.API_BASE_URL}/user/signout`, { withCredentials: true });
   await axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/signout`, { withCredentials: true });
+  // await axios.get(`${import.meta.env.VITE_BACKEND_URL}/auth/signout`, { withCredentials: true });
+  console.log("logout")
   toast.success("Logged out successfully");
   localStorage.removeItem("token");
   window.location.reload();

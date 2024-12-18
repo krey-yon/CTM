@@ -93,7 +93,11 @@ const Dashboard = () => {
   useEffect(() => {
     if (roomId) {
       socket.emit('joinRoom', roomId);
-      fetchTodos();
+      // fetchTodos();
+      const interval = setInterval(() => {
+        fetchTodos(); // Fetch updated todos every second
+      }, 1000);
+      return () => clearInterval(interval);
     }
   }, [roomId, socket]);
 
