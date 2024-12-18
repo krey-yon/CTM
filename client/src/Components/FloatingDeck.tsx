@@ -1,4 +1,3 @@
-import { FaRegUser } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";

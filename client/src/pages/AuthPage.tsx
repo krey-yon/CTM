@@ -36,6 +36,8 @@ export default function AuthPage() {
     setFormData({ ...formData, [name]: value });
   };
 
+  console.log(error, success);
+
   const handleLogin = async () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signin`, { email, password });
